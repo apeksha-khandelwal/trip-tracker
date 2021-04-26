@@ -25,7 +25,6 @@ public class RegistrationController {
     public ModelAndView showRegister(HttpServletRequest request, HttpServletResponse response) {
         ModelAndView mav = new ModelAndView("register");
         mav.addObject("user", new User());
-
         return mav;
     }
 

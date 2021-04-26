@@ -16,7 +16,7 @@
 <body>
 <table>
     <tr>
-        <td>Welcome ${Name}</td>
+        <td>Welcome ${sessionScope.username }</td>
     </tr>
     <tr>
     </tr>
@@ -24,6 +24,7 @@
     </tr>
     <tr>
         <td><a href="home.jsp">Home</a></td>
+        <td><a href="${pageContext.request.contextPath }/logout">Logout</a></td>
     </tr>
 </table>
 </body>

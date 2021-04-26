@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
@@ -20,22 +21,21 @@ public class LoginController {
     private UserDaoImpl userDao;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView showLogin(HttpServletRequest request, HttpServletResponse response) {
+    public ModelAndView showLogin() {
         ModelAndView mav = new ModelAndView("login");
         mav.addObject("login", new User());
-
         return mav;
     }
 
     @RequestMapping(value = "/loginProcess", method = RequestMethod.POST)
-    public ModelAndView loginProcess(HttpServletRequest request, HttpServletResponse response,
-                                     @ModelAttribute("login") User login) throws Exception {
+    public ModelAndView loginProcess(HttpSession session, @ModelAttribute("login") User login) throws Exception {
         ModelAndView mav = null;
 
         User user = userDao.get(login.getUsername());
 
         if (null != user) {
             mav = new ModelAndView("welcome");
+            session.setAttribute("username", login.getUsername());
             mav.addObject("Name", user.getFirstname());
         } else {
             mav = new ModelAndView("login");

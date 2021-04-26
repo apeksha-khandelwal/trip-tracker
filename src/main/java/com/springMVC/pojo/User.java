@@ -21,9 +21,14 @@ public class User {
 
 //    @ManyToMany(mappedBy = "user")
 //    private Set<Trips> activities = new HashSet<>();
+//
+//    public Set<Trips> getActivities() {
+//        return activities;
+//    }
 
-
-    public User(){}
+//    public void setActivities(Set<Trips> activities) {
+//        this.activities = activities;
+//    }
 
     public String getUsername() {
         return username;
