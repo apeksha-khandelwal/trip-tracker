@@ -71,7 +71,6 @@
 
         /* The Modal (background) */
         .modal {
-            display: none; /* Hidden by default */
             position: fixed; /* Stay in place */
             z-index: 1; /* Sit on top */
             left: 0;
@@ -141,7 +140,6 @@
     <form:form class="modal-content animate" id="loginForm" method="post" modelAttribute="login" action="loginProcess">
     <span onclick="document.getElementById('loginModal').style.display='none'" class="close" title="Close Modal">&times;</span>
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
-</div>
 
 <div class="container">
     <form:label path="username"><b>Username</b></form:label>
@@ -159,11 +157,9 @@
 </div>
 </form:form>
 </div>
-<table align="center">
-    <tr>
-        <td style="font-style: italic; color: red;">${message}</td>
-    </tr>
-</table>
-
+<div>
+    <p>style="font-style: italic; color: red;">${message}</p>
+</div>
+</div>
 </body>
 </html>

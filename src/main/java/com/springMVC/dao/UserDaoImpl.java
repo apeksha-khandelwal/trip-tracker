@@ -4,7 +4,7 @@ import com.springMVC.pojo.User;
 import org.hibernate.HibernateException;
 import org.hibernate.query.Query;
 
-public class UserDaoImpl extends UserDao{
+public class UserDaoImpl extends Dao {
 
     public User get(String username) throws Exception{
         try {

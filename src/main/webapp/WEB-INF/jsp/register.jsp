@@ -72,7 +72,6 @@
 
     /* The Modal (background) */
     .modal {
-        display: none; /* Hidden by default */
         position: fixed; /* Stay in place */
         z-index: 1; /* Sit on top */
         left: 0;
@@ -139,7 +138,8 @@
 <body>
 
 <div id="registerModal" class="modal">
-    <form:form class="modal-content animate" id="regForm" method="post" modelAttribute="user" action="registerProcess">        <div class="imgcontainer">
+    <form:form class="modal-content animate" id="regForm" method="post" modelAttribute="user" action="registerProcess">
+        <div class="imgcontainer">
         <span onclick="document.getElementById('registerModal').style.display='none'" class="close" title="Close Modal">&times;</span>
         <img src="img_avatar2.png" alt="Avatar" class="avatar">
     </div>
@@ -178,6 +178,9 @@
             <span class="psw">Forgot <a href="#">password?</a></span>
         </div>
     </form:form>
+    <div>
+        style="font-style: italic; color: red;">${message}
+    </div>
 </div>
 </body>
 </html>
