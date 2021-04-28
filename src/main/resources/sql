@@ -1,0 +1,36 @@
+drop table users;
+drop table activities;
+drop table cities;
+create table users(
+username varchar(50) primary key,
+password varchar(50),
+firstname varchar(20),
+lastname varchar(20),
+email varchar(50),
+address varchar(50),
+phone varchar(10),
+role varchar(5)
+);
+create table cities(
+cityId int primary key,
+name varchar(50)
+);
+create table activities(
+activityID int primary key,
+name varchar(50),
+price float,
+timing varchar(20),
+city int,
+foreign key (city) references cities(cityId)
+);
+
+insert into cities values('1','MA');
+insert into cities values('2','AK');
+insert into cities values('3','LA');
+
+insert into activities values(1,'MassadA', 200,'pm',1);
+insert into activities values(2,'sdasdAK',200,'am',1);
+insert into activities values(3,'LdasdA',400,'sad',1);
+
+insert into users values('admin','admin@123','amey','arya','amey@gmail.com','1078','213123121', 'admin');
+insert into users values('user','admin@123','apeksha','arya','amey@gmail.com','1078','213123121', 'user');

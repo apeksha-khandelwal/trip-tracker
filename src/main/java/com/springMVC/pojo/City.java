@@ -1,23 +1,33 @@
 package com.springMVC.pojo;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "cities")
 public class City {
 
     @Id
-    private int id;
+    private int cityId;
     @Basic
     @Column
     private String name;
 
-    public int getId() {
-        return id;
+    @OneToMany(mappedBy = "city")
+    private List<Activity> activities;
+
+    public List getActivities() {
+        return activities;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     public String getName() {
@@ -27,4 +37,5 @@ public class City {
     public void setName(String name) {
         this.name = name;
     }
+
 }

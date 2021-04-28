@@ -11,7 +11,7 @@
 <!--    <mapping class="com.springMVC.pojo.Trips"/>-->
     <mapping class="com.springMVC.pojo.City"/>
 <!--    <mapping class="com.springMVC.pojo.Hotel"/>-->
-<!--    <mapping class="com.springMVC.pojo.Activity"/>-->
+    <mapping class="com.springMVC.pojo.Activity"/>
 <!--    <mapping class="com.springMVC.pojo.Traveler"/>-->
     <mapping class="com.springMVC.pojo.User"/>
   </session-factory>

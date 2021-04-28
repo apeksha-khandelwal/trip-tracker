@@ -2,6 +2,7 @@ package com.springMVC.controller;
 
 import com.springMVC.dao.CityDao;
 import com.springMVC.dao.UserDaoImpl;
+import com.springMVC.pojo.City;
 import com.springMVC.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
