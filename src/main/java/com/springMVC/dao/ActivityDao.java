@@ -14,7 +14,6 @@ public class ActivityDao extends Dao{
             begin();
             System.out.println(id+"id in dao");
             String sql = "from Activity where city.id = :city";
-//            String sql = "from Activity";
             Query q = getSession().createQuery(sql);
             q.setInteger("city", id);
             List list = q.getResultList();

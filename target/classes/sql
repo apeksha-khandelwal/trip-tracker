@@ -1,6 +1,7 @@
 drop table users;
 drop table activities;
 drop table cities;
+
 create table users(
 username varchar(50) primary key,
 password varchar(50),
@@ -11,6 +12,7 @@ address varchar(50),
 phone varchar(10),
 role varchar(5)
 );
+
 create table cities(
 cityId int primary key,
 name varchar(50)
@@ -22,6 +24,48 @@ price float,
 timing varchar(20),
 city int,
 foreign key (city) references cities(cityId)
+);
+
+create table traveler(
+id int primary key,
+firtname varchar(50),
+lastname varchar(50),
+phone varchar(10),
+days int,
+budget float,
+adults int,
+children int
+);
+
+create table hotels(
+id int primary key ,
+name varchar(50),
+date varchar(10),
+checkin varchar(10),
+checkout varchar(10),
+breakfast bool,
+lunch bool,
+dinner bool
+);
+
+create table trips(
+tripId int primary key,
+username varchar(50),
+city int,
+hotelId int,
+travelerId int,
+foreign key (city) references cities(cityId),
+foreign key (username) references users(username),
+foreign key (hotelId) references hotels(id),
+foreign key (travelerId) references travelers(id)
+);
+
+create table tripactivities(
+tripID int,
+activityID int,
+primary key (tripId, activityID),
+foreign key (tripID) references trips(tripID),
+foreign key (activityID) references activities(activityID)
 );
 
 insert into cities values('1','MA');

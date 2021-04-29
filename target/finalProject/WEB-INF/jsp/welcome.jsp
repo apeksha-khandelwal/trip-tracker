@@ -15,6 +15,30 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <title>Welcome</title>
+    <style>
+        .collapsible {
+            background-color: #777;
+            color: white;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .active, .collapsible:hover {
+            background-color: #555;
+        }
+
+        .content {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
 <%@ include file="header.jsp" %>
@@ -22,7 +46,6 @@
     <form:form action="listActivities" modelAttribute="city" method="get">
         Select a City:&nbsp;
         <select name="cityId">
-<%--        <form:select path="cityId" items = "${list}"/>--%>
             <c:forEach items="${list}" var="city">
                 <option path = "cityId" name = "cityId" value="${city.cityId}">${city.name}</option>
             </c:forEach>
@@ -32,16 +55,38 @@
     </form:form>
 </div>
 <div>
-    <form:form action="addTrip" method="post">
-        <c:forEach items="${activities}" var="item">
-            <h1>${item.name}</h1>
+    <c:if test="${sessionScope.city != null}">
+    <form:form action="addTrip" method="get">
+        <c:forEach items="${activities}" var="act">
+            <tr>
+                <td><input type="checkbox" class= "collapsible" name="activityId" value="${act.activityId}"/> ${act.name}</td>
+                <div class="content">
+                    <label>Price: ${act.price}</label>m
+                    <label>Timing: ${act.timing}</label>
+                </div>
+            </tr>
+
         </c:forEach>
-        <%--                <form:checkboxes path="activities" items="${activities}" itemLabel="name" itemValue="Id"/>--%>
-        <%--                            <div>--%>
-        <%--                                <label>Activity:</label>--%>
-        <%--                                <input type="text" disabled value="$">--%>
-        <%--                            </div>--%>
+        <input type="submit" value="Submit"/>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                    } else {
+                        content.style.display = "block";
+                    }
+                });
+            }
+        </script>
     </form:form>
+    </c:if>
 </div>
 </body>
 </html>

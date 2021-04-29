@@ -23,9 +23,6 @@ public class Activity {
         return city;
     }
 
-    //    @ManyToMany(mappedBy = "projects")
-//    private Set<Trips> activities = new HashSet<>();
-
     public int getActivityId() {
         return activityId;
     }

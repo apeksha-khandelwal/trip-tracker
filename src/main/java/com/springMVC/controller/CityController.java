@@ -1,17 +1,19 @@
 package com.springMVC.controller;
 
 import com.springMVC.dao.ActivityDao;
-import com.springMVC.dao.CityDao;
+import com.springMVC.pojo.Activity;
 import com.springMVC.pojo.City;
-import com.springMVC.pojo.User;
-import org.hibernate.HibernateException;
+import com.springMVC.pojo.Hotel;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class CityController {
@@ -23,11 +25,23 @@ public class CityController {
         try{
             mav = new ModelAndView("welcome");
             mav.addObject("activities", act.list(city.getCityId()));
+//            mav.addObject("trip", new Trip());
             System.out.println(act.list(city.getCityId()).size()+"length");
-            session.setAttribute("city", city.getCityId());
+            session.setAttribute("city", city);
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+        return mav;
+    }
+
+    @RequestMapping(value = "/addTrip", method = RequestMethod.GET)
+    public ModelAndView addTrip(HttpServletRequest request, HttpSession session) {
+        String[] activity = request.getParameterValues("activityId");
+        List list = Arrays.asList(activity);
+        System.out.println(list.size());
+        session.setAttribute("activities", list);
+        ModelAndView mav = new ModelAndView("hotel");
+        mav.addObject("hotel", new Hotel());
         return mav;
     }
 }

@@ -2,6 +2,7 @@ package com.springMVC.pojo;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,15 +20,11 @@ public class User {
     private String phone;
     private String role;
 
-//    @ManyToMany(mappedBy = "user")
-//    private Set<Trips> activities = new HashSet<>();
+//    @OneToMany(mappedBy = "user")
+//    private List<Trip> trip;
 //
-//    public Set<Trips> getActivities() {
-//        return activities;
-//    }
-
-//    public void setActivities(Set<Trips> activities) {
-//        this.activities = activities;
+//    public List getTrip() {
+//        return trip;
 //    }
 
     public String getUsername() {

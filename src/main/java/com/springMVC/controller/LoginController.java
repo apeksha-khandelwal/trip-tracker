@@ -34,7 +34,7 @@ public class LoginController {
         if (null != user) {
             city = new CityDao();
             mav = new ModelAndView("welcome");
-            session.setAttribute("username", login.getUsername());
+            session.setAttribute("user", login);
             mav.addObject("Name", user.getFirstname());
             mav.addObject("list", city.list());
         } else {

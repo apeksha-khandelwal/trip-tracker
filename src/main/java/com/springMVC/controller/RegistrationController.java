@@ -40,7 +40,7 @@ public class RegistrationController {
             status.setComplete();
             city = new CityDao();
             mav = new ModelAndView("welcome");
-            session.setAttribute("username", user.getUsername());
+            session.setAttribute("user", user);
             mav.addObject("Name", user.getFirstname());
             mav.addObject("list", city.list());
             return mav;
