@@ -15,11 +15,11 @@
 <h1>Trip Information</h1>
 <form:form method="post" modelAttribute="traveler" action="addTraveler">
     <div class="container">
-        <form:label path="firstName">First Name:</form:label>
-        <form:input type="text" path="firstName" placeholder="Enter First Name" name="firstname" id="firstname"/>
+        <form:label path="firstname">First Name:</form:label>
+        <form:input type="text" path="firstname" placeholder="Enter First Name" name="firstname" id="firstname"/>
         <br>
-        <form:label path="lastName">Last Name:</form:label>
-        <form:input type="text" path="lastName" placeholder="Enter Last Name" name="lastName" id="lastName"/>
+        <form:label path="lastname">Last Name:</form:label>
+        <form:input type="text" path="lastname" placeholder="Enter Last Name" name="lastname" id="lastname"/>
         <br>
         <form:label path="phone">Phone Number: </form:label>
         <form:input path="phone"  placeholder="Enter Phone Number" type="text" name="phone" id="phone" />

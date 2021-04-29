@@ -14,11 +14,12 @@ role varchar(5)
 );
 
 create table cities(
-cityId int primary key,
+cityId int primary key auto_increment,
 name varchar(50)
 );
+
 create table activities(
-activityID int primary key,
+activityID int primary key auto_increment,
 name varchar(50),
 price float,
 timing varchar(20),
@@ -26,8 +27,8 @@ city int,
 foreign key (city) references cities(cityId)
 );
 
-create table traveler(
-id int primary key,
+create table travelers(
+id int primary key auto_increment,
 firtname varchar(50),
 lastname varchar(50),
 phone varchar(10),
@@ -49,7 +50,7 @@ dinner bool
 );
 
 create table trips(
-tripId int primary key,
+tripId int primary key auto_increment,
 username varchar(50),
 city int,
 hotelId int,

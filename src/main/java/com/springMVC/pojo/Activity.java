@@ -8,6 +8,7 @@ import java.util.Set;
 @Table(name = "activities")
 public class Activity {
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int activityId;
     @Basic
     @Column

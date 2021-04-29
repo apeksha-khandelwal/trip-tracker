@@ -10,8 +10,8 @@ public class Traveler {
     private int id;
     @Basic
     @Column
-    private String firstName;
-    private String LastName;
+    private String firstname;
+    private String lastname;
     private String phone;
     private int days;
     private double budget;
@@ -29,20 +29,20 @@ public class Traveler {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstName) {
+        this.firstname = firstName;
     }
 
-    public String getLastName() {
-        return LastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        LastName = lastName;
+    public void setLastname(String lastName) {
+        lastname = lastName;
     }
 
     public String getPhone() {

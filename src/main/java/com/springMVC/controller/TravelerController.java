@@ -31,7 +31,7 @@ public class TravelerController {
             return mav;
 
         }catch(Exception e){
-            mav = new ModelAndView("register", "message","Username already exists!");
+            mav = new ModelAndView("traveler", "message","Username already exists!");
             System.out.println("controller error " +e.getMessage());
         }
         return mav;
