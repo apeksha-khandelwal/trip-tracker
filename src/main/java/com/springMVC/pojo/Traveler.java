@@ -18,8 +18,8 @@ public class Traveler {
     private int adults;
     private int children;
 
-//    @OneToOne(mappedBy = "traveler")
-//    private Trip trip;
+    @OneToOne(mappedBy = "traveler")
+    private Trip trip;
 
     public int getId() {
         return id;

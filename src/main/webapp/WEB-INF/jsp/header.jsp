@@ -16,8 +16,8 @@
         <span class="navbar-text">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="${pageContext.request.contextPath }/welcome">Home</a></li>
-                    <li class="currentTrip"><a href="${pageContext.request.contextPath }/currentTrip" style="width:auto;">Current Trips</a></li>
-                    <li class="aboutUs"><a href="#">About US</a></li>
+                    <li class="currentTrip"><a href="${pageContext.request.contextPath }/listTrip" style="width:auto;">Current Trips</a></li>
+                    <li class="aboutUs"><a href="${pageContext.request.contextPath }/about">About US</a></li>
                     <li class="logout"><a href="${pageContext.request.contextPath }/logout" style="width:auto;">Logout</a></li>
                 </ul>
             </span>

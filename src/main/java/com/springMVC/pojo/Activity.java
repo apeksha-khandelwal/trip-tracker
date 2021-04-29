@@ -2,6 +2,7 @@ package com.springMVC.pojo;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -19,6 +20,9 @@ public class Activity {
     @ManyToOne
     @JoinColumn(name ="city")
     private City city;
+
+    @OneToMany(mappedBy = "activity")
+    List<TripActivity> tripActivities;
 
     public City getCity() {
         return city;

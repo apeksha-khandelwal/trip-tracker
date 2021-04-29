@@ -24,8 +24,8 @@ public class Hotel implements java.io.Serializable{
     @Column(columnDefinition = "TINYINT(1) default '1'")
     private boolean dinner;
 
-//    @OneToOne(mappedBy = "hotel")
-//    private Trip trip;
+    @OneToOne(mappedBy = "hotel")
+    private Trip trip;
 
     public int getId() {
         return id;

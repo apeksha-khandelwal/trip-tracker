@@ -33,10 +33,17 @@ public class LoginController {
 
         if (null != user) {
             city = new CityDao();
-            mav = new ModelAndView("welcome");
-            session.setAttribute("user", login);
-            mav.addObject("Name", user.getFirstname());
-            mav.addObject("list", city.list());
+            if(user.getRole().equals("admin")) {
+                mav = new ModelAndView("welcomeAdmin");
+                session.setAttribute("user", user);
+                mav.addObject("Name", user.getFirstname());
+                mav.addObject("list", city.list());
+            }else{
+                mav = new ModelAndView("welcome");
+                session.setAttribute("user", user);
+                mav.addObject("Name", user.getFirstname());
+                mav.addObject("list", city.list());
+            }
         } else {
             mav = new ModelAndView("login");
             mav.addObject("message", "Username or Password is wrong!!");

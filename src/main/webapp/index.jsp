@@ -26,7 +26,7 @@
                     <li class="active"><a href="#">Home</a></li>
                     <li class="register"><a href="${pageContext.request.contextPath }/register" style="width:auto;">Sign Up</a></li>
                     <li class="login"><a href="${pageContext.request.contextPath }/login" style="width:auto;">Login</a></li>
-                    <li class="aboutUs"><a href="#">About US</a></li>
+                    <li class="aboutUs"><a href="./WEB-INF/jsp/about.jsp">About US</a></li>
                 </ul>
             </span>
     </div>

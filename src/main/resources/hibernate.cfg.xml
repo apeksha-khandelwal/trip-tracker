@@ -8,7 +8,8 @@
     <property name="hibernate.connection.password">R@dha01kanh@</property>
     <property name="hibernate.show_sql">true</property>
     <property name="hibernate.hbm2ddl.auto">update</property>
-<!--    <mapping class="com.springMVC.pojo.Trip"/>-->
+    <mapping class="com.springMVC.pojo.Trip"/>
+    <mapping class="com.springMVC.pojo.TripActivity"/>
     <mapping class="com.springMVC.pojo.City"/>
     <mapping class="com.springMVC.pojo.Hotel"/>
     <mapping class="com.springMVC.pojo.Activity"/>

@@ -19,8 +19,8 @@ public class City {
     @OneToMany(mappedBy = "city")
     private List<Activity> activities;
 
-//    @OneToOne(mappedBy = "city")
-//    private Trip trip;
+    @OneToOne(mappedBy = "city")
+    private Trip trip;
 
     public List getActivities() {
         return activities;

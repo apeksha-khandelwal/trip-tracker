@@ -56,7 +56,7 @@
 </div>
 <div>
     <c:if test="${sessionScope.city != null}">
-    <form:form action="addTrip" method="get">
+    <form:form action="addActivities" method="get">
         <c:forEach items="${activities}" var="act">
             <tr>
                 <td><input type="checkbox" class= "collapsible" name="activityId" value="${act.activityId}"/> ${act.name}</td>

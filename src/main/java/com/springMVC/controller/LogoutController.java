@@ -13,7 +13,7 @@ public class LogoutController {
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
     public ModelAndView logout(HttpSession session) {
-        session.removeAttribute("username");
+        session.removeAttribute("user");
         ModelAndView mav = new ModelAndView("logout");
         return mav;
     }

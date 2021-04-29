@@ -20,12 +20,12 @@ public class User {
     private String phone;
     private String role;
 
-//    @OneToMany(mappedBy = "user")
-//    private List<Trip> trip;
-//
-//    public List getTrip() {
-//        return trip;
-//    }
+    @OneToMany(mappedBy = "user")
+    private List<Trip> trip;
+
+    public List getTrip() {
+        return trip;
+    }
 
     public String getUsername() {
         return username;
